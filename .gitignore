@@ -1,0 +1,30 @@
+# ==========================
+# IntelliJ IDEA
+# ==========================
+# IntelliJ project files
+.idea/
+*.iml
+out/
+
+
+# ==========================
+# Maven
+# ==========================
+target/
+*.jar
+*.war
+*.ear
+
+# ==========================
+# Logs and temp files
+# ==========================
+*.log
+*.tmp
+*.swp
+
+# ==========================
+# OS generated files
+# ==========================
+.DS_Store
+Thumbs.db
+desktop.ini
