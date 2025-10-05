@@ -1,7 +1,8 @@
 # FruitBasketApp
+
 Console application for Fruit Basket App 
 
-Usage: java -jar fruit-basket-app.jar <csv-file-path>
+**Usage:** java -jar fruit-basket-app.jar <csv-file-path>
 
 **Input CSV example:**
 
