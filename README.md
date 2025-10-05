@@ -1,18 +1,18 @@
 # FruitBasketApp
 
-Console application for Fruit Basket App 
+Console application for Fruit Basket App that generates a structured summary report.
 
 **Usage:** java -jar fruit-basket-app.jar <csv-file-path>
 
 **Input CSV example:**
 
-fruit-type,age-in-days,characteristic1,characteristic2
+Each line in the input CSV file represents a piece of fruit with:
 
-apple,1,red,sweet
-
-orange,2,round,sweet
-
-pineapple,5,prickly,sweet
+- **Fruit type**
+  
+- **Age (in days)**
+  
+- **Characteristics** (one or more traits like color, taste, shape, etc.)
 
 **Output example:**
 
@@ -29,6 +29,33 @@ Count of each fruit type (in descending order) — a quick overview of how many 
 Count of fruits grouped by both type and characteristics (in descending order) — shows how many fruits share the same color/shape/flavor traits.
 
 # Sample Run
+
+Sample fruits.csv
+
+fruit-type,age-in-days,characteristic1,characteristic2
+apple,1,red,sweet
+orange,2,round,sweet
+pineapple,5,prickly,sweet
+apple,4,yellow,sweet
+grapefruit,2,yellow,bitter
+watermelon,4,green,heavy
+orange,2,round,sweet
+orange,1,round,sweet
+pineapple,6,prickly,sweet
+apple,1,green,tart
+grapefruit,1,bitter,yellow
+watermelon,2,heavy,green
+grapefruit,2,bitter,yellow
+watermelon,3,heavy,green
+orange,1,round,sweet
+orange,5,sweet,round
+pineapple,2,sweet,prickly
+apple,2,red,sweet
+orange,6,round,sweet
+pineapple,2,sweet,prickly
+apple,1,red,sweet
+grapefruit,3,yellow,bitter
+
 **Command**
 
 java -jar target/fruit-basket-app-1.0-SNAPSHOT.jar src/main/resources/fruits.csv
@@ -86,6 +113,8 @@ FruitBasket/
 
 ├── .gitignore
 
+├── run_tests.sh
+
 ├── src/
 
 │ ├── main/
@@ -139,6 +168,66 @@ java -jar target/fruit-basket-app-1.0-SNAPSHOT.jar src/main/resources/fruits.csv
 3. Summary Report - Provides detailed fruit count breakdowns
 4. Extensible Design - Easily adaptable for extra characteristics (e.g., char3, char4)
 5. JUnit 5 Tests - Covers TotalFruitCount, DistinctFruitTypes, OldestFruits, CountByType, CountByTypeandCharacteristics.
+
+# Error Handling
+1. IF File not found 
+
+   PRINT "Error: File does not exist.” and exits with code 1
+
+2. IF File not found 
+
+   PRINT “Invalid CSV format” and exits with code 2
+3. IF Invalid age value
+
+   PRINT “Invalid age value: <value>”
+   
+5.  IF Help flag used
+
+   PRINT Prints usage info and exits gracefully
+
+
+# Bonus Features Implemented
+
+**Dynamic CSV Support:** The app can supports any number of characteristics
+
+fruit-type,age-in-days,characteristic1,characteristic2,characteristic3,...
+apple,1,round,sweet,red,year-round
+pineapple,5,prickly,sweet,yellow
+
+**-help Parameter:**  java -jar target/fruit-basket-app-1.0-SNAPSHOT.jar -help
+
+Usage: java -jar fruit-basket-app.jar <csv-file-path>
+Example: java -jar fruit-basket-app.jar src/main/resources/fruits.csv
+Description:
+  Processes a CSV file containing fruits and generates a summary report.
+  CSV Format:
+    fruit-type,age-in-days,characteristic1,characteristic2,[optional more...]
+Example with dynamic characteristics:
+    apple,1,round,sweet,red,year-round
+
+**Verification Script**
+
+A run_tests.sh script is included in the repo root to automatically:
+
+Build the project
+
+Run the application with the sample CSV
+
+Verify that the output contains expected sections
+
+Run all JUnit tests
+
+To execute:
+
+./run_tests.sh
+
+
+
+
+
+
+
+
 
  
 
