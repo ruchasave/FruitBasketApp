@@ -28,12 +28,19 @@ FruitBasket/
 │ │ │ ├── FruitBasketProcessor.java
 
 │ │ │ ├── FruitReport.java
+
 │ │ │ └── Main.java
+
 │ │ └── resources/
+
 │ │ └── fruits.csv
+
 │ └── test/
+
 │ └── java/com/fruitbasket/
+
 │ └── FruitBasketProcessorTest.java
+
 └── target/
 
 # Prerequisites
