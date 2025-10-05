@@ -15,6 +15,7 @@ orange,2,round,sweet
 pineapple,5,prickly,sweet
 
 **Output example:**
+
 When you run the Fruit Basket App with a valid CSV file, it produces a summary report with the following details:
 
 Total number of fruits — how many entries are in the CSV.
