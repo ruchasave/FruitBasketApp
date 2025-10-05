@@ -9,8 +9,11 @@ pineapple,5,prickly,sweet
 # Project Structure
 FruitBasket/
 ├── pom.xml
+
 ├── README.md
+
 ├── .gitignore
+
 ├── src/
 │ ├── main/
 │ │ ├── java/com/fruitbasket/
