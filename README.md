@@ -52,16 +52,27 @@ The number of each type of fruit in descending order:
 
 The various characteristics (count, color, shape, etc.) of each fruit by type:
   3 apple: red, sweet
+  
   5 orange: round, sweet
+  
   2 pineapple: prickly, sweet
+  
   1 apple: yellow, sweet
+  
   2 grapefruit: yellow, bitter
+  
   1 watermelon: green, heavy
+  
   1 apple: green, tart
+  
   2 grapefruit: bitter, yellow
+  
   2 watermelon: heavy, green
+  
   1 orange: sweet, round
+  
   2 pineapple: sweet, prickly
+  
   1 apple: red, sweet
 
 
