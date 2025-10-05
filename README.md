@@ -1,6 +1,7 @@
 # FruitBasketApp
 Console application for Fruit Basket App 
 CSV example
+
 fruit-type,age-in-days,characteristic1,characteristic2
 apple,1,red,sweet
 orange,2,round,sweet
