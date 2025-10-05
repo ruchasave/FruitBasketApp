@@ -6,7 +6,9 @@ Input CSV example
 fruit-type,age-in-days,characteristic1,characteristic2
 
 apple,1,red,sweet
+
 orange,2,round,sweet
+
 pineapple,5,prickly,sweet
 
 # Project Structure
