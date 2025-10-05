@@ -9,31 +9,47 @@ import java.util.List;
 
 public class FruitCSVReader {
 
-    public static List<Fruit> readFruits(String filePath) throws IOException {
+    public static List<Fruit> readFruits(String filePath) {
         List<Fruit> fruits = new ArrayList<>();
+
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            boolean isFirstLine = true;
+            boolean isHeader = true;
+
             while ((line = br.readLine()) != null) {
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue; // skip header row
+                if (isHeader) { // skip header row
+                    isHeader = false;
+                    continue;
                 }
-                String[] tokens = line.split(",");
-                if (tokens.length < 3) {
-                    throw new IllegalArgumentException("Invalid CSV format: " + line);
+
+                if (line.trim().isEmpty()) continue;
+
+                String[] parts = line.split(",");
+                if (parts.length < 3) {
+                    throw new IllegalArgumentException("Invalid CSV format: each line must have at least 3 columns");
                 }
-                String type = tokens[0].trim();
-                int age;
+
+                String fruitType = parts[0].trim();
+                int ageInDays;
                 try {
-                    age = Integer.parseInt(tokens[1].trim());
+                    ageInDays = Integer.parseInt(parts[1].trim());
                 } catch (NumberFormatException e) {
-                    throw new IllegalArgumentException("Invalid age value: " + tokens[1]);
+                    throw new IllegalArgumentException("Invalid age value: " + parts[1]);
                 }
-                List<String> characteristics = Arrays.asList(Arrays.copyOfRange(tokens, 2, tokens.length));
-                fruits.add(new Fruit(type, age, characteristics));
+
+                // Dynamic: all remaining columns = characteristics
+                List<String> characteristics = new ArrayList<>();
+                if (parts.length > 2) {
+                    characteristics.addAll(Arrays.asList(parts).subList(2, parts.length));
+                }
+
+                fruits.add(new Fruit(fruitType, ageInDays, characteristics));
             }
+
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Error reading file: " + e.getMessage());
         }
+
         return fruits;
     }
 }
