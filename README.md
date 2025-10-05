@@ -50,6 +50,7 @@ FruitBasket/
 
 # Clone the Repository
 git clone https://github.com/ruchasave/FruitBasketApp.git
+
 cd FruitBasket
 
 # Build the Project
