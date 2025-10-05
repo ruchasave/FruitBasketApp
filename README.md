@@ -28,11 +28,11 @@ Count of each fruit type (in descending order) — a quick overview of how many 
 Count of fruits grouped by both type and characteristics (in descending order) — shows how many fruits share the same color/shape/flavor traits.
 
 # Sample Run
-Command
+**Command**
 
 java -jar target/fruit-basket-app-1.0-SNAPSHOT.jar src/main/resources/fruits.csv
 
-Console Output
+**Console Output**
 
 Processing file: src/main/resources/fruits.csv
 
