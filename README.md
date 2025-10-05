@@ -8,6 +8,7 @@ pineapple,5,prickly,sweet
 
 # Project Structure
 FruitBasket/
+
 ├── pom.xml
 
 ├── README.md
@@ -15,11 +16,17 @@ FruitBasket/
 ├── .gitignore
 
 ├── src/
+
 │ ├── main/
+
 │ │ ├── java/com/fruitbasket/
+
 │ │ │ ├── Fruit.java
+
 │ │ │ ├── FruitCSVReader.java
+
 │ │ │ ├── FruitBasketProcessor.java
+
 │ │ │ ├── FruitReport.java
 │ │ │ └── Main.java
 │ │ └── resources/
